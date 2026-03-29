@@ -1,1 +1,42 @@
-# awesome-mlpatron-presets
+# Awesome MLPatron Presets
+
+Ready-to-run ML training presets for [MLPatron](https://mlpatron.com). Fork a repo, create a project, pick an entry point, and start training.
+
+To run your own code on MLPatron, your repo needs an `MLproject` file, a Docker image, and MLflow integration. See the [mlpatron-demo README](https://github.com/mlpatron/mlpatron-demo/blob/main/README.md) for the full setup guide. Or just start from one of the presets below.
+
+Each preset links to a completed baseline run with full metrics and training logs. If you're building on top of an existing preset, you can use these as your baseline without re-running them yourself.
+
+---
+
+## demo
+
+[github.com/mlpatron/mlpatron-demo](https://github.com/mlpatron/mlpatron-demo)
+
+The "hello world" of MLPatron — an MNIST digit classifier (PyTorch) that lets you try the full workflow end-to-end for a few cents.
+
+| Entry Point | GPU | Time | Run |
+|-------------|-----|------|-----|
+| `main` (10 epochs) | L4 | ~5 min | — |
+
+---
+
+## nanochat
+
+[github.com/mlpatron/mlpatron-nanochat](https://github.com/mlpatron/mlpatron-nanochat)
+
+Fork of [karpathy/nanochat](https://github.com/karpathy/nanochat) — "the simplest experimental harness for training LLMs." Pretrains GPT-2 family models on FineWeb-Edu.
+
+| Entry Point | Model | GPU | Steps | Time | Run |
+|-------------|-------|-----|-------|------|-----|
+| `a100_d10` | 196M params, 10 layers | A100 40GB | 1500 | ~62 min | [baseline](https://mlpatron.com/jobs/3a8ac67b-152a-4315-9be3-c50bf0752e64) |
+| `h100_d12` | 135M params, 12 layers (reference) | H100 80GB | 2205 | ~47 min | [baseline](https://mlpatron.com/jobs/d4841e1c-a62e-4bfa-87c0-120a5686a5b6) |
+
+Both presets train to convergence using [Chinchilla-optimal](https://arxiv.org/abs/2203.15556) compute budgets — the number of training tokens is matched to model size so that neither data nor parameters are wasted. All hyperparameters (learning rate, batch size, warmup schedule, etc.) are auto-computed from `depth`; you don't need to tune anything.
+
+d12 is the nanochat community's standard baseline — results are directly comparable across setups.
+
+---
+
+## Contributing
+
+Have a validated preset? Open an issue or PR. Requirements: public repo, at least one completed run on MLPatron, documented results.
