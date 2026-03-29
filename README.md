@@ -1,10 +1,10 @@
 # Awesome MLPatron Presets
 
-Ready-to-run ML training presets for [MLPatron](https://mlpatron.com). Fork a repo, create a project, pick an entry point, and start training.
+Ready-to-run ML training presets for [MLPatron](https://mlpatron.com). Pick one below, or use them as a reference to build your own.
 
-To run your own code on MLPatron, your repo needs an `MLproject` file, a Docker image, and MLflow integration. See the [mlpatron-demo README](https://github.com/mlpatron/mlpatron-demo/blob/main/README.md) for the full setup guide. Or just start from one of the presets below.
+**Want to run your own code?** Your repo needs an `MLproject` file, a Docker image, and MLflow integration. The [mlpatron-demo README](https://github.com/mlpatron/mlpatron-demo/blob/main/README.md) walks through the full setup step by step — start there.
 
-Each preset links to a completed baseline run with full metrics and training logs. If you're building on top of an existing preset, you can use these as your baseline without re-running them yourself.
+Each preset below links to a completed baseline run with full metrics and training logs. If you're building on top of one, use the existing baseline — no need to re-run it yourself.
 
 ---
 
