@@ -16,7 +16,7 @@ The "hello world" of MLPatron — an MNIST digit classifier (PyTorch) that lets 
 
 | Entry Point | GPU | Time | Run |
 |-------------|-----|------|-----|
-| `main` (10 epochs) | L4 | ~5 min | — |
+| `main` (10 epochs) | L4 | ~5 min | [baseline](https://mlpatron.com/jobs/3ec8bc66-666d-453b-85b2-6505a59fe07b) |
 
 ---
 
