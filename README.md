@@ -35,6 +35,16 @@ Both presets train to convergence using [Chinchilla-optimal](https://arxiv.org/a
 
 d12 is the nanochat community's standard baseline — results are directly comparable across setups.
 
+### Post-training (d12)
+
+| Entry Point | Stage | GPU | Time | Run |
+|-------------|-------|-----|------|-----|
+| `h100_d12_sft` | SFT (conversation, tool use, math) | H100 80GB | ~2 min | [baseline](https://mlpatron.com/jobs/d99d7573-317e-4ea6-bdc6-f7546f6f9425) |
+
+SFT teaches the base model conversation format, tool use (calculator), multiple-choice, and math reasoning. It uses the upstream default data mixture (SmolTalk + MMLU×3 + GSM8K×4 + Identity + Spelling = ~1.07M rows, 1 epoch).
+
+Each post-training preset downloads its prerequisite checkpoint from MLflow artifacts automatically — no manual setup needed. The `pretrain_mlflow_run_id` / `sft_mlflow_run_id` parameter defaults to the baseline checkpoint above.
+
 ---
 
 ## Contributing
